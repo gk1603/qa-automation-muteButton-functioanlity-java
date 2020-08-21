@@ -1,0 +1,52 @@
+                                                                  TEST ANALYSIS
+                                                                  
+Business Requirement:
+We need to test the functionality of Google Meet Mute Button.
+
+Technical Requirement:
+This requirement will include change points on UI front as well as backend functionality. 
+At UI level , we need to integrate a clickable button which will have differnt colours when mute is switched OFF and ON.
+At Backend level , a REST API is created which will be triggered when the mute button is clicked on the UI, 
+this api will in turn toggle the default microphone of the user on and off.
+
+Testing Scope:
+The scope of testing in this sprint will be as below:
+  1. Test the UI functionality of the mute button 
+  2. Test the REST API on a functional level and its integration with the UI as well. The API will accept a key in its uri.
+  
+Test Cases:
+
+  UI Test Cases:
+  
+      1.Verify that mute button is aligned as per the product requirement.
+      2.Verify that mute button is clickable and focussable.
+      3.Verify that if the browser session has expired , the mute button is not functional.
+      4.Verify that once mute button is toggled OFF , the user's voice is not heard from other joinees of the meeting.
+      5.Verify that once mute button is toggled ON , the user's voice is heard from other joinees of the meeting.
+      6.Verify that once mute button is toggled OFF , its colour is changed to RED.
+      7.Verify that once mute button is toggled ON, its colour is changed to WHITE.
+      8.Verify that when the meeting starts, by default the mute button is toggled OFF and its colour is WHITE.
+      9.Verify that when the number of attendees in the meeting is large, by default the mute button is toggled ON when you join and its colour is RED.
+      10.Verify the functionality of mute button on different browsers.
+      11.Verify the functionality of mute button on different internet speeds.
+      12.Verify that mute button functions correctly when toggled multiple times very quickly.
+      13.Verify that mute button functionality is working fine on the tab Join Now tab, meaning that a user can mute himself before joining the call.
+      14.Verify that when a mouse hover is done over the mute button, a message pop up comes that informs the user of keyboard buttons to mute/unmute.
+      15.Veriy that mute/unmute is happening with the keyboard shortcuts on different set of machines.
+      
+      
+ Backend Test Cases : 
+      1. Verify that the API is triggered when the mute button is clicked on the UI.
+      2. Verify all the parameters of the payload for null values.
+      3. Verify that header values of the API is as per the technical requirement.
+      4.Verify that when correct key is passed in URI arguement , api response code is 200
+      5.Verify that when correct key is passed in URI arguement , api response code is 403
+      6.Verify that API is hit with incorrect authorisation header values , the api response code is 401.
+      7.Verify that on hitting the API , no unncessary logging is being done at server end.
+      8.Verify that on hitting the API , no error logs are printed at the server even if the response is SUCCESS
+      
+      SAMPLE REST REQUEST:
+      URI:hangouts.clients6.google.com/hangouts/v1_meetings/media_streams/modify?key=AIzaSyCG_6Rm6c7ucLr2NwAq33-vluCp2VfSkf0&alt=protojson
+      Correct key to mute/unmute - 'AIzaSyCG_6Rm6c7ucLr2NwAq33-vluCp2VfSkf0&alt=protojson'
+      
+      
